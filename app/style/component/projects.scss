@@ -1,0 +1,190 @@
+.Projects {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  transition: height 0.25s;
+
+  &Box {
+    position: relative;
+    height: 347px;
+    width: 100%;
+    margin-top: $spaceExtraLarge;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include breakpoint(xs) {
+      margin-top: $spaceSmall;
+    }
+  }
+
+  &-Filter {
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    background: $iron;
+    padding: $spaceMedium $spaceExtraLarge;
+    color: $pale_sky;
+    font-size: 16px;
+
+    @include breakpoint(xs) {
+      display: none;
+    }
+
+    &Mobile {
+      position: fixed;
+      display: none;
+      bottom: 39px;
+      background: $iron;
+      color: $pale_sky;
+      font-size: 16px;
+      padding: $spaceMedium $spaceBig $spaceMedium 0;
+      width: 100%;
+      z-index: 5;
+
+      @include breakpoint(xs) {
+        display: table;
+      }
+
+      &-Title,
+      #Projects-FilterSelect {
+        display: table-cell;
+      }
+
+      &-Title {
+        width: 70px;
+        padding: 0 $spaceMedium;
+      }
+
+      #Projects-FilterSelect {
+        width: 100%;
+        max-width: 500px;
+        padding: $spaceMedium $spaceBig;
+      }
+    }
+
+    &List {
+      display: inline-block;
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+      margin-left: $spaceMedium;
+
+      &-Separ {
+        display: inline-block;
+        font-weight: 700;
+      }
+
+      li {
+        display: inline-block;
+
+        .Button {
+          color: $pale_sky;
+          padding: $spaceSmall $spaceMedium;
+
+          transition: 0.25s;
+
+          &:hover,
+          &:focus {
+            text-decoration: none;
+            color: $east_bay;
+          }
+        }
+
+        &.active .Button {
+          font-weight: 900;
+          color: $east_bay;
+        }
+      }
+    }
+  }
+
+  &-Description {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: $spaceExtraLarge;
+    background: rgba(0, 0, 0, .88);
+    text-align: center;
+
+    @include breakpoint(md) {
+      width: 550px;
+    }
+
+    &Separ {
+      width: 300px;
+      height: 1px;
+      background-color: #404040;
+      margin: $spaceBig auto;
+    }
+
+    &Content {
+      overflow-y: auto;
+      max-height: 78px;
+
+      @include breakpoint(md) {
+        max-height: 105px;
+      }
+
+      p {
+        margin-top: $spaceSmall;
+        color: $white;
+        @extend .Font-Light;
+
+        @include breakpoint(md) {
+          text-align: left;
+        }
+      }
+    }
+
+    &--right {
+      float: right;
+    }
+
+    .Title {
+      font-size: 20px;
+
+      @include breakpoint(md) {
+        text-align: left;
+      }
+    }
+  }
+
+  &-Type,
+  &-Country,
+  &-Budget {
+    margin: 0;
+
+    @include breakpoint(md) {
+      text-align: left;
+    }
+  }
+
+  &-Gallery {
+    display: none;
+
+    &Button {
+      position: absolute;
+      bottom: 0;
+      margin-left: -103px;
+      margin-bottom: $spaceExtraLarge;
+
+      .material-icons {
+        vertical-align: middle;
+        margin-right: $spaceSmall;
+      }
+    }
+  }
+}
+
+[data-namespace="projectspage"] .Footer {
+  @include breakpoint(maxmd) {
+    margin-bottom: 103px;
+  }
+}

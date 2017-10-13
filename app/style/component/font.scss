@@ -1,0 +1,54 @@
+.Font {
+  /* Style */
+  &-Thin {
+    font-weight: 100;
+  }
+  &-Light {
+    font-weight: 300;
+  }
+  &-Bold {
+    font-weight: 700;
+  }
+  &-Black {
+    font-weight: 900;
+  }
+  &-Ita {
+    font-style: italic;
+  }
+  &-Upper {
+    text-transform: uppercase;
+  }
+  &-Capitalize {
+    text-transform: capitalize;
+  }
+
+  /* Colors */
+  &-Blue {
+    color: $east_bay;
+  }
+
+  &-LightBlue {
+    color: $gothic;
+  }
+
+  &-PaleSky {
+    color: $pale_sky;
+  }
+
+  &-White {
+    color: $white;
+  }
+
+  &-Red {
+    color: $crimson;
+  }
+
+  &-DarkGray {
+    color: $shark;
+  }
+
+  /* Size */
+  &-Big {
+    font-size: 18px;
+  }
+}

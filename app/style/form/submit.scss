@@ -1,0 +1,23 @@
+.wpcf7-submit {
+  @extend .Button;
+  @extend .Button-Rounded;
+  @extend .Button-Red;
+  @extend .Font-Upper;
+  @extend .Font-Red;
+  @extend .Font-Bold;
+
+  background: $white;
+  font-size: 15px;
+
+  &:focus {
+    outline: none;
+  }
+
+  @include breakpoint(maxmd) {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

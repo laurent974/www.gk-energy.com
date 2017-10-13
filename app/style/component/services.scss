@@ -1,0 +1,226 @@
+.Services {
+  &-WhatWeAre,
+  &-Expertise {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+
+    .Box-TitleBackground-Gothic .Title {
+      font-size: 20px;
+    }
+  }
+
+  &-WhatWeAre {
+    &Image {
+      height: 494px;
+      background: url("assets/img/service-whatweare.jpg") no-repeat center;
+      background-size: cover;
+    }
+
+    &Content {
+      position: absolute;
+      vertical-align: middle;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 50%;
+      font-size: 18px;
+      color: $east_bay;
+
+      @include breakpoint($min: 767px, $max: 992px) {
+        background: rgba(255,255,255,.8);
+        padding: $spaceMedium $spaceBig;
+      }
+
+      @include breakpoint(xs) {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: translateY(0);
+        margin-top: $spaceRegular;
+      }
+    }
+  }
+
+  &-Expertise {
+    &List {
+      margin-top: $spaceLarge;
+    }
+    &Box {
+      margin-top: $spaceLarge;
+      background-repeat: no-repeat;
+      background-position:  0 25px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      .Title-Services {
+        font-size: 24px;
+      }
+
+      &-Content {
+        margin-top: $spaceMedium;
+        font-size: 18px;
+        color: $east_bay;
+
+        @include breakpoint(md) {
+          margin-top: 310px;
+        }
+
+        ol {
+          counter-reset: number;
+          padding-left: 0;
+          margin-top: $spaceSmall;
+
+          li {
+            list-style-type: none;
+          	counter-increment: number;
+          	margin-bottom: 10px;
+
+            &:before {
+              display: inline-block;
+              content: counter(number);
+            	width: 20px;
+              height: 19px;
+              text-align: center;
+              padding-left: 1px;
+              padding-top: 3px;
+            	margin-right: $spaceMedium;
+            	vertical-align: middle;
+            	background: $east_bay;
+            	border-radius: 50%;
+            	font-weight: bold;
+            	font-size: 10px;
+            	color: $white;
+            }
+          }
+        }
+      }
+
+      &--mechanical,
+      &--mechanical .Services-ExpertiseBoxMobileImage {
+        background-image: url("assets/img/header-mechanical-eng.jpg");
+      }
+
+      &--electrical,
+      &--electrical .Services-ExpertiseBoxMobileImage {
+        background-image: url("assets/img/header-electrical-eng.jpg");
+      }
+
+      &--plumbing,
+      &--plumbing .Services-ExpertiseBoxMobileImage {
+        background-image: url("assets/img/header-plumbing-eng.jpg");
+      }
+
+      &--technical,
+      &--technical .Services-ExpertiseBoxMobileImage {
+        background-image: url("assets/img/header-technical-audit.jpg");
+      }
+
+      &--mechanical,
+      &--electrical,
+      &--plumbing,
+      &--technical {
+        @include breakpoint(maxmd) {
+          background-image: none;
+        }
+      }
+
+      &MobileImage {
+        height: 200px;
+        margin-top: $spaceMedium;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @include breakpoint(md) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.WhatWeDo-Menu {
+  position: fixed;
+  text-align: center;
+  z-index: 5;
+  right: 0;
+  top: 95px;
+  font-size: 16px;
+
+  @include breakpoint(maxmd) {
+    display: none;
+  }
+
+  &Mobile {
+    display: table;
+    position: fixed;
+    bottom: 39px;
+    background: $iron;
+    color: $pale_sky;
+    font-size: 16px;
+    padding: $spaceMedium $spaceSmall;
+    width: 100%;
+    z-index: 5;
+
+    @include breakpoint(md) {
+      display: none;
+    }
+
+    &-Title,
+    #WhatWeDo-MenuMobileSelect {
+      display: table-cell;
+    }
+
+    &-Title {
+      width: 120px;
+      padding: 0 $spaceMedium;
+    }
+
+    #WhatWeDo-MenuMobileSelect {
+      width: 100%;
+      max-width: 500px;
+      padding: $spaceMedium $spaceSmall;
+    }
+  }
+
+  &List {
+    background: $east_bay;
+    color: $white;
+    list-style: none;
+    text-align: center;
+    padding-left: 0;
+    border: 1px solid $pale_sky;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+
+    li {
+      padding: 0;
+      border-top: 1px solid $pale_sky;
+
+      .Button {
+        width: 100%;
+        transition: 0.25s;
+
+        &:hover {
+          background: $iron;
+          color: $east_bay;
+        }
+      }
+
+      &:first-child {
+        border-top: 0;
+      }
+    }
+  }
+}
+
+[data-namespace="servicepage"] .Footer {
+  @include breakpoint(maxmd) {
+    margin-bottom: 103px;
+  }
+}

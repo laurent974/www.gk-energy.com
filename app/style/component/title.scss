@@ -1,0 +1,35 @@
+// Tracking to Letter-Spacing mixin
+@mixin tracking( $tracking ){
+    letter-spacing: ( $tracking / 1000 ) * 1em;
+}
+
+.Title {
+  margin: 0;
+  &-Blue {
+    color: $east_bay;
+  }
+
+  &-LightBlue {
+    color: $gothic;
+  }
+
+  &-PaleSky {
+    color: $pale_sky;
+  }
+
+  &-Space {
+    @include tracking(180);
+  }
+
+  &--bgRed {
+    display: inline-block;
+    min-width: 540px;
+    padding: $spaceMedium $spaceLarge;
+    background: $crimson;
+
+    @include breakpoint(xs) {
+      min-width: auto;
+      width: 100%;
+    }
+  }
+}

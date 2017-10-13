@@ -1,0 +1,33 @@
+.breadcrumb {
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: transparent;
+
+  a,
+  .active {
+    font-size: 16px;
+  }
+
+  a {
+    color: $pale_sky;
+    @extend .Font-Light;
+
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
+  }
+
+  .active {
+    @extend .Font-Black;
+    color: $east_bay;
+  }
+
+  .material-icons {
+    font-size: 21px;
+    vertical-align: bottom;
+    margin-left: $spaceSmall;
+    margin-right: $spaceSmall;
+    color: $pale_sky;
+  }
+}

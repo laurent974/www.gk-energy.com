@@ -1,0 +1,8 @@
+.Logo {
+  width: auto;
+  height: 100%;
+
+  @include breakpoint(md) {
+    height: auto;
+  }
+}
